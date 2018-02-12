@@ -1,13 +1,108 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html>
 <head>
-    <meta charset="UTF-8"/>
     <title>主页</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css"/>
+    <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
-<h1>
-    welcome to this page
-</h1>
-<a href="login?name=WangYunfei">登录</a>
+<div class="container">
+    <div class="row clearfix">
+        <div class="col-md-12 column">
+            <nav class="navbar navbar-default navbar-inverse" role="navigation">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse"
+                            data-target="#bs-example-navbar-collapse-1"><span
+                            class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span
+                            class="icon-bar"></span><span class="icon-bar"></span></button>
+                    <a class="navbar-brand" href="#">主页</a>
+                </div>
+
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li class="">
+                            <a href="login.html">登录</a>
+                        </li>
+                    </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">作者<strong class="caret"></strong></a>
+                            <ul class="dropdown-menu">
+
+                                <li>
+                                    <a href="https://github.com/fantasykill" style="text-align:center">我的github</a>
+                                </li>
+                                <li>
+                                    <a href="https://gitee.com/fantasykill" style="text-align:center">我的码云</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+            </nav>
+            <div class="jumbotron">
+                <h1>
+                    Spring Boot 学习
+                </h1>
+                <p>
+                    Spring Boot is designed to get you up and
+                    running as quickly as possible, with minimal
+                    upfront configuration of Spring. Spring Boot
+                    takes an opinionated view of building production
+                    ready applications.
+                </p>
+                <p>
+                    <a class="btn btn-primary btn-large" href="https://spring.io/">Spring官网</a>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="row clearfix">
+        <div class="col-md-4 column">
+            <h2>
+                Spring Boot
+            </h2>
+            <p>Spring Boot is the starting point for building all Spring-based applications. Spring Boot is designed to
+                get you up and running as quickly as possible, with minimal upfront configuration of Spring. </p>
+
+            <p>
+                <a class="btn" href="#">View details »</a>
+            </p>
+        </div>
+        <div class="col-md-4 column">
+            <h2>
+                Spring Cloud
+            </h2>
+            <p>
+                Building distributed systems doesn't need to be complex and error-prone. Spring Cloud offers a simple
+                and accessible programming model to the most common distributed system patterns, helping developers
+                build resilient, reliable, and coordinated applications. Spring Cloud is built on top of Spring Boot,
+                making it easy for developers to get started and become productive quickly.
+            </p>
+            <p>
+                <a class="btn" href="#">View details »</a>
+            </p>
+        </div>
+        <div class="col-md-4 column">
+            <h2>
+                Spring Cloud Data Flow
+            </h2>
+            <p>
+                Connect the Enterprise to the Internet of Anything-mobile devices, sensors, wearables, automobiles, and
+                more. Spring Cloud Data Flow provides a unified service for creating composable data microservices that
+                address streaming and ETL-based data processing patterns.
+            </p>
+            <p>
+                <a class="btn" href="#">View details »</a>
+            </p>
+        </div>
+    </div>
+</div>
+
 </body>
 </html>

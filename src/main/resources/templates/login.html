@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
 <head>
+    <title>用户登录</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css"/>
     <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <title>用户主页</title>
 </head>
 <body>
 <div class="container">
@@ -18,8 +18,8 @@
 
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
-                        <li class="">
-                            <a href="#">退出</a>
+                        <li class="active">
+                            <a href="login.html">登录</a>
                         </li>
                     </ul>
 
@@ -42,9 +42,15 @@
 
             </nav>
             <div class="jumbotron">
-                <h1>Login Success</h1>
-                <p th:text="'Hello, ' + ${name} + '!'" />
+                <h1>
+                    登录 Demo
+                </h1>
+                <p>
 
+                </p>
+                <p>
+                    <a class="btn btn-primary btn-large" href="userlogin?name=WangYunfei">登录</a>
+                </p>
             </div>
         </div>
     </div>

@@ -14,15 +14,15 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class LoginController {
 
-    @RequestMapping("/login")
+    @RequestMapping("/userlogin")
     public String login(String name, Model m){
         m.addAttribute("name",name);
         return "success";
     }
 
-    @RequestMapping(value = "/userLogin",method = RequestMethod.GET)
-    public String indexpage(Model model){
-        model.addAttribute("name","Wang Yunfei");
-        return  "success";
+    @RequestMapping(value = "/login",method = RequestMethod.GET)
+    public String indexpage(String name,Model model){
+        model.addAttribute("name",name);
+        return  "login";
     }
 }
