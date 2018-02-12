@@ -22,3 +22,5 @@ nbbuild/
 dist/
 nbdist/
 .nb-gradle/
+
+*.js linguist-language=html£»*.css linguist-language=java
