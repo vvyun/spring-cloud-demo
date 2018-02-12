@@ -19,10 +19,10 @@ import org.springframework.web.bind.annotation.RestController;
 @EnableAutoConfiguration
 public class BootdemoApplication {
 
-	@RequestMapping(value = "/",method = RequestMethod.GET)
-	String indexpage( ){
-		return  "hello word";
-	}
+//	@RequestMapping(value = "/",method = RequestMethod.GET)
+//	String indexpage( ){
+//		return  "hello word";
+//	}
 	public static void main(String[] args) {
 		SpringApplication.run(BootdemoApplication.class, args);
 	}

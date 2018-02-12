@@ -1,6 +1,5 @@
 package com.wyf.controller;
 
-import com.wyf.demo.BootdemoApplication;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -13,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 @SpringBootApplication
 @EnableAutoConfiguration
 //@RequestMapping(value = "/demo")
-public class HomeController {
+public class TestController {
     @RequestMapping(value = "/getInfoById",method = RequestMethod.GET)
     String getuserInfoById(@RequestParam(value = "id") String id){
         return  "您的信息为：" + "id: " + id;
@@ -24,11 +23,12 @@ public class HomeController {
         return  "您的信息为：" + "name: " + name;
     }
 
-    @RequestMapping(value = "/",method = RequestMethod.GET)
-    String indexpage( ){
-        return  "hello";
-    }
+//    @RequestMapping(value = "/",method = RequestMethod.GET)
+//    String indexpage(Model model){
+//        model.addAttribute("name","Wang Yunfei");
+//        return  "index";
+//    }
     public static void main(String[] args) {
-        SpringApplication.run(HomeController.class, args);
+        SpringApplication.run(TestController.class, args);
     }
 }
