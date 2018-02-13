@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 /**
  *
  * @author Yunfei
- * login action
+ * login controller
  *
  */
 @Controller
