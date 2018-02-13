@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css"/>
@@ -43,106 +43,62 @@
             </nav>
             <div class="jumbotron">
                 <h3>Login Success</h3>
-                <p th:text="'Hello, ' + ${name} + '!'" />
+                <!--<p th:text="'Hello, ' + ${name} + '!'" />-->
             </div>
 
             <div>
-                <button>所有用户表</button>
+                <button id="getAll">所有用户表</button>
                 <br/>
-                <a href="/alluser"></a>
-                <table class="table table-hover">
-                    <thead>
-                    <tr>
-                        <th>
-                            编号
-                        </th>
-                        <th>
-                            产品
-                        </th>
-                        <th>
-                            交付时间
-                        </th>
-                        <th>
-                            状态
-                        </th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td>
-                            1
-                        </td>
-                        <td>
-                            TB - Monthly
-                        </td>
-                        <td>
-                            01/04/2012
-                        </td>
-                        <td>
-                            Default
-                        </td>
-                    </tr>
-                    <tr class="success">
-                        <td>
-                            1
-                        </td>
-                        <td>
-                            TB - Monthly
-                        </td>
-                        <td>
-                            01/04/2012
-                        </td>
-                        <td>
-                            Approved
-                        </td>
-                    </tr>
-                    <tr class="error">
-                        <td>
-                            2
-                        </td>
-                        <td>
-                            TB - Monthly
-                        </td>
-                        <td>
-                            02/04/2012
-                        </td>
-                        <td>
-                            Declined
-                        </td>
-                    </tr>
-                    <tr class="warning">
-                        <td>
-                            3
-                        </td>
-                        <td>
-                            TB - Monthly
-                        </td>
-                        <td>
-                            03/04/2012
-                        </td>
-                        <td>
-                            Pending
-                        </td>
-                    </tr>
-                    <tr class="info">
-                        <td>
-                            4
-                        </td>
-                        <td>
-                            TB - Monthly
-                        </td>
-                        <td>
-                            04/04/2012
-                        </td>
-                        <td>
-                            Call in to confirm
-                        </td>
-                    </tr>
-                    </tbody>
-                </table>
+                <!--<a href="/alluser">所有用户表</a>-->
+
+                <div id="alluser">
+
+                </div>
+
             </div>
         </div>
     </div>
 </div>
+<script>
+    //<![CDATA[ js代码
+    $(document).ready(function(){
+        $("#getAll").click(function(){
+            htmlobj=$.ajax({url:"/alluser",async:false});
+            /*[{"name":"1321","id":"123","password":"214214124","status":13},{"name":"1213","id":"124","password":"2435325","status":11}]*/
+            var jsonData = htmlobj.responseText;
+            jsonData = JSON.parse(jsonData); //将json字符串转换成json对象
+            // alert(jsonData)
+            var html = '<table class="table table-striped"><thead>\n' +
+                '\t\t\t\t\t<tr>\n' +
+                '\t\t\t\t\t\t<th>\n' +
+                '\t\t\t\t\t\t\t 姓名 \n' +
+                '\t\t\t\t\t\t</th>\n' +
+                '\t\t\t\t\t\t<th>\n' +
+                '\t\t\t\t\t\t\t I D \n' +
+                '\t\t\t\t\t\t</th>\n' +
+                '\t\t\t\t\t\t<th>\n' +
+                '\t\t\t\t\t\t\t 密码 \n' +
+                '\t\t\t\t\t\t</th>\n' +
+                '\t\t\t\t\t\t<th>\n' +
+                '\t\t\t\t\t\t\t 状态 \n' +
+                '\t\t\t\t\t\t</th>\n' +
+                '\t\t\t\t\t</tr>\n' +
+                '\t\t\t\t</thead>';
+            for (var j in jsonData) {
+                var obj = jsonData[j];
+                // alert(obj)
+                html += '<tr>'
+                html += '<td>' + obj.name + '</td>';
+                html += '<td>' + obj.id + '</td>';
+                html += '<td>' + obj.password + '</td>';
+                html += '<td>' + obj.status + '</td>';
+                html += '</tr>';
+            }
+            html += '</table>';
+            $('#alluser').html(html);
+        });
+    });
+    //]]>
+</script>
 </body>
 </html>
