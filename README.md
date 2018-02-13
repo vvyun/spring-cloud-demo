@@ -17,3 +17,8 @@ git clone https://github.com/fantasykill/springboot.git
 4. 等待maven下载外相关依赖  
 5. 运行com.xxx.MainApplication
 6. 运行成功后访问 [http://localhost:8080/](http://localhost:8080/)  
+
+**************
+运行截图：  
+![1](doc/1.png)
+![2](doc/2.png)
