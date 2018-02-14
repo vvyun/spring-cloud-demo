@@ -18,12 +18,28 @@ public class UserService {
     @Autowired
     private UserMapper userMapper;
 
+    /**
+     * @return allUsers
+     */
     public List<User> listAll() {
         return userMapper.showAll();
     }
+
+    /**
+     *
+     * @param id
+     * @return User
+     */
     public User getUserById(String id){
         return userMapper.getById(id);
     }
+
+    /**
+     *
+     * @param id
+     * @param pass
+     * @return int 是否存在
+     */
     public int hasUser(String id ,String pass){
         User user = userMapper.getById(id);
         if (user!=null){
@@ -32,5 +48,23 @@ public class UserService {
             else return 0;
         }
         return 2;
+    }
+
+    /**
+     *
+     * @param user
+     * @return 是否添加成功
+     */
+    public int addUser(User user){
+        return userMapper.insert(user);
+    }
+
+    /**
+     *
+     * @param id
+     * @return 是否删除成功
+     */
+    public int deleteUser(String id){
+        return userMapper.delete(id);
     }
 }
