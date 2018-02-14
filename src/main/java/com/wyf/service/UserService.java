@@ -67,4 +67,13 @@ public class UserService {
     public int deleteUser(String id){
         return userMapper.delete(id);
     }
+
+    /**
+     *
+     * @param user
+     * @return
+     */
+    public int updateUser(User user){
+        return userMapper.update(user);
+    }
 }

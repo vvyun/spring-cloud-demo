@@ -48,7 +48,7 @@ public class UserController {
      */
     @RequestMapping("/addUser")
     public int addUser(@RequestParam String id,String pass,String name){
-        System.out.println("name = " + name);
+//        System.out.println("name = " + name);
         return userService.addUser(new User(name,id,pass,1));
     }
 
@@ -71,6 +71,6 @@ public class UserController {
      */
     @RequestMapping("/updateUser")
     public int updateUser(@RequestParam String id,String name,String pass){
-        return 1;
+        return userService.updateUser(new User(name,id,pass,1));
     }
 }
