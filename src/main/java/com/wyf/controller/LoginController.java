@@ -28,13 +28,16 @@ public class LoginController {
 //        if (id.equals("123")&&pass.equals("123456")){
 //        System.out.println("id = :"+id+"pass = "+pass);
 //        System.out.printf(" .. "+issu);
-        if (issu>0){
+        if (issu==1){
             m.addAttribute("name",userService.getUserById(id).getName());
-            return "success";
+            return "userhome";
+        }else if(issu==2){
+            m.addAttribute("name","1");
+            return "login";
+        }else {
+            m.addAttribute("name","2");
+            return "login";
         }
-        m.addAttribute("name","用户名或密码不正确");
-
-        return "login";
     }
 
     @RequestMapping(value = "/login",method = RequestMethod.GET)

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css"/>
+    <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <title>用户主页</title>
+    <style>
+        .nav-pills>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover {
+            color: #fff;
+            background-color: #151719;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="row clearfix">
+        <div class="col-md-12 column">
+            <nav class="navbar navbar-default navbar-inverse" role="navigation">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span>
+                        <span class="icon-bar"></span><span class="icon-bar"></span>
+                    </button> <a class="navbar-brand" href="#">主页</a>
+                </div>
+
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <!--<ul class="nav navbar-nav">-->
+                        <!--<li class="">-->
+                            <!--<a href="logout">退出</a>-->
+                        <!--</li>-->
+                    <!--</ul>-->
+
+                    <ul class="nav navbar-nav navbar-right">
+
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">作者<strong class="caret"></strong></a>
+                            <ul class="dropdown-menu">
+
+                                <li>
+                                    <a href="https://github.com/fantasykill" style="text-align:center">我的github</a>
+                                </li>
+                                <li>
+                                    <a href="https://gitee.com/fantasykill" style="text-align:center">我的码云</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+            </nav>
+
+        </div>
+        <div class="col-md-2 column" id="letfdh">
+            <ul class="panel panel-group nav nav-pills nav-stacked"
+                role="navigation" id="accordion">
+                <li class="panel panel-default active"><a
+                        class="dropdown-toggle" data-toggle="collapse"
+                        data-parent="#accordion" href="#collapse1"> 个人信息 </a>
+
+                    <div id="collapse1" class="panel-collapse collapse">
+
+                        <ul class="nav newa" role="navigation">
+                            <li><a href="#">修改密码</a></li>
+                            <li><a href="#">修改头像</a></li>
+                            <li><a href="javascript:exit();">退出账号</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="panel panel-default active"><a
+                        class="dropdown-toggle" data-toggle="collapse"
+                        data-parent="#accordion" href="#collapse2"> 用户管理 </a>
+
+                    <div id="collapse2" class="panel-collapse collapse">
+
+                        <ul class="nav newa" role="navigation">
+                            <li><a id="addUser" href="#">添加用户</a></li>
+                            <li><a id="updateUser" href="#">修改用户</a></li>
+                            <li><a id="delUser" href="#">删除用户</a></li>
+                            <li><a id="getAll" href="#">所有用户</a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="col-md-10 column">
+            <div class="" id="usercontent">
+                <p th:text="'Hello, ' + ${name} + '!'" />
+                <p> Login Success</p>
+            </div>
+            <div>
+                <div id="alluser">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    //<![CDATA[ js代码
+    $(document).ready(function(){
+        $("#getAll").click(function(){
+            htmlobj=$.ajax({url:"/alluser",async:false});
+            /*[{"name":"1321","id":"123","password":"214214124","status":13},{"name":"1213","id":"124","password":"2435325","status":11}]*/
+            var jsonData = htmlobj.responseText;
+            jsonData = JSON.parse(jsonData); //将json字符串转换成json对象
+            // alert(jsonData)
+            var html = '<table class="table table-striped"><thead>'+'<tr>'+'<th>'+'姓名'+'</th>'+'<th>'+
+                ' I D '+'</th>'+'<th>'+' 密码 '+'</th>'+'<th>'+' 状态 '+'</th>'+'</tr>'+'</thead>';
+            for (var j in jsonData) {
+                var obj = jsonData[j];
+                // alert(obj)
+                html += '<tr>'
+                html += '<td>' + obj.name + '</td>';
+                html += '<td>' + obj.id + '</td>';
+                html += '<td>' + obj.password + '</td>';
+                html += '<td>' + obj.status + '</td>';
+                html += '</tr>';
+            }
+            html += '</table>';
+            $('#usercontent').html(html);
+        });
+
+        $("#addUser").click(function () {
+            var html = "<form class=\"form-horizontal\" role=\"form\" action=\"adduser\" method=\"post\">\n" +
+                "                    <div class=\"form-group\">\n" +
+                "                        <label for=\"inputEmail3\" class=\"col-sm-2 control-label\">账号</label>\n" +
+                "                        <div class=\"col-sm-10\">\n" +
+                "                            <input type=\"text\" class=\"form-control\" id=\"inputEmail3\" name=\"id\"/>\n" +
+                "                        </div>\n" +
+                "                    </div>\n" +
+                "                    <div class=\"form-group\">\n" +
+                "                        <label for=\"inputEmail3\" class=\"col-sm-2 control-label\">姓名</label>\n" +
+                "                        <div class=\"col-sm-10\">\n" +
+                "                            <input type=\"text\" class=\"form-control\" id=\"inputEmail3\" name=\"id\"/>\n" +
+                "                        </div>\n" +
+                "                    </div>\n" +
+                "                    <div class=\"form-group\">\n" +
+                "                        <label for=\"inputPassword3\" class=\"col-sm-2 control-label\">密码</label>\n" +
+                "                        <div class=\"col-sm-10\">\n" +
+                "                            <input type=\"password\" class=\"form-control\" id=\"inputPassword3\" name=\"pass\"/>\n" +
+                "                        </div>\n" +
+                "                    </div>\n" +
+                "                    <div class=\"form-group\">\n" +
+                "                        <div class=\"col-sm-offset-2 col-sm-10\">\n" +
+                "                            <button type=\"submit\" class=\"btn btn-default\">添加</button>\n" +
+                "                        </div>\n" +
+                "                    </div>\n" +
+                "                </form>";
+            $('#usercontent').html(html);
+        })
+    });
+    //]]>
+</script>
+</body>
+</html>

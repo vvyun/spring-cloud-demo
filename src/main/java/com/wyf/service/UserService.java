@@ -25,8 +25,12 @@ public class UserService {
         return userMapper.getById(id);
     }
     public int hasUser(String id ,String pass){
-        if (userMapper.getById(id).getPassword().equals(pass))
-            return  1;
-        else return 0;
+        User user = userMapper.getById(id);
+        if (user!=null){
+            if (userMapper.getById(id).getPassword().equals(pass))
+                return  1;
+            else return 0;
+        }
+        return 2;
     }
 }

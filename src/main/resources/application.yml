@@ -1,6 +1,8 @@
 server:
   port: 8080
 
+
+
 spring:
     datasource:
         name: test
@@ -23,6 +25,9 @@ spring:
         testOnReturn: false
         poolPreparedStatements: true
         maxOpenPreparedStatements: 20
+    thymeleaf:
+      cache: false #暂时关闭
+
 mybatis:
 #  mapper-locations: classpath:mapping/*.xml
   type-aliases-package: com.wyf.bean
