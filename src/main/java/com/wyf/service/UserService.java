@@ -24,4 +24,9 @@ public class UserService {
     public User getUserById(String id){
         return userMapper.getById(id);
     }
+    public int hasUser(String id ,String pass){
+        if (userMapper.getById(id).getPassword().equals(pass))
+            return  1;
+        else return 0;
+    }
 }

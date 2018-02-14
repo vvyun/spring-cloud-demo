@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css"/>
@@ -41,8 +41,12 @@
                 </div>
 
             </nav>
-            <div class="jumbotron">
-                <h3>Login Success</h3>
+
+        </div>
+        <div class="col-md-12 column">
+            <div class="">
+                <p th:text="'Hello, ' + ${name} + '!'" />
+                <h3> Login Success</h3>
                 <!--<p th:text="'Hello, ' + ${name} + '!'" />-->
             </div>
 
