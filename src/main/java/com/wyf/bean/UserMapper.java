@@ -20,7 +20,7 @@ public interface UserMapper {
     int insert(User user);
     @Delete("delete from user where id = #{id}")
     int delete(String id);
-    @Update("update user set name = #{name} password = #{password} where id = #{id}")
+    @Update("update user set name = #{name} , password = #{password} where id = #{id}")
     int update(User user);
     @Select("select * from user where id = #{id}")
     User getById(String id);
