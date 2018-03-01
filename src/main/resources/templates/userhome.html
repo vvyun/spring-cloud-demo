@@ -95,11 +95,28 @@
             <div>
                 <div id="alluser">
                 </div>
+                <div id="uploadimg">
+                <form id="upload_form" enctype="multipart/form-data" action="uploadfiles">
+
+                    <div class="form-group" id="myfiles">
+                        <div id="pidpid"></div>
+                        <input id="file-zh" name="files" type="file"
+                               data-preview-file-type="any"/>
+                        <!--
+                        <input id="file-my" class="file" name="files" type="file" multiple data-preview-file-type="any"
+                         data-upload-url="uploadfiles?parentid=0"> -->
+                    </div>
+                </form>
+                </div>
             </div>
         </div>
     </div>
 </div>
 <script src="/js/siduuser.js"></script>
 <script src="/js/userinfo.js"></script>
+<link href="/css/fileinput.css" media="all" rel="stylesheet"
+      type="text/css" />
+<script src="/js/fileinput.js" type="text/javascript"></script>
+<script src="/js/locales/zh.js" type="text/javascript"></script>
 </body>
 </html>

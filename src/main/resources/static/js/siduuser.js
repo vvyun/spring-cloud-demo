@@ -2,6 +2,7 @@
 $(document).ready(function(){
     //所有用户
     $("#getAll").click(function(){
+        $('#uploadimg').hide();
         htmlobj=$.ajax({url:"/alluser",async:false});
         /*[{"name":"1321","id":"123","password":"214214124","status":13},{"name":"1213","id":"124","password":"2435325","status":11}]*/
         var jsonData = htmlobj.responseText;
@@ -24,6 +25,7 @@ $(document).ready(function(){
     });
     //添加用户
     $("#addUser").click(function () {
+        $('#uploadimg').hide();
         var html = "<form id='formadduser' class=\"form-horizontal\" onsubmit=\"return false\" role=\"form\" action=\"##\" method=\"post\">\n" +
             "                    <div class=\"form-group\">\n" +
             "                        <label for=\"inputEmail\" class=\"col-sm-2 control-label\">账号</label>\n" +
@@ -53,6 +55,7 @@ $(document).ready(function(){
     });
     //删除用户
     $("#delUser").click(function () {
+        $('#uploadimg').hide();
         var html = "<form id='formdeluser' class=\"form-horizontal\" onsubmit=\"return false\" role=\"form\" action=\"##\" method=\"post\">\n" +
             "                    <div class=\"form-group\">\n" +
             "                        <label for=\"inputEmail\" class=\"col-sm-2 control-label\">账号</label>\n" +
@@ -70,6 +73,7 @@ $(document).ready(function(){
     });
     //修改用户
     $("#updateUser").click(function () {
+        $('#uploadimg').hide();
         var html = "<form id='formupuser' class=\"form-horizontal\" onsubmit=\"return false\" role=\"form\" action=\"##\" method=\"post\">\n" +
             "                    <div class=\"form-group\">\n" +
             "                        <label for=\"inputEmail\" class=\"col-sm-2 control-label\">账号</label>\n" +
