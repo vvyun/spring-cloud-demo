@@ -25,3 +25,4 @@ git clone https://github.com/fantasykill/springboot.git
 运行截图：  
 ![1](doc/1.png)
 ![2](doc/2.png)
+![3](doc/3.png)
