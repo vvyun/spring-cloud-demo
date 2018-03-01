@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import javax.servlet.http.HttpSession;
+
 /**
  *
  * @author Yunfei
@@ -18,28 +20,42 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class LoginController {
 
+    User user = new User();
     @Autowired
     private UserService userService;
 
+    //登录Controller
     @RequestMapping("/userlogin")
-    public String login(@RequestParam String id,String pass, Model m){
+    public String login(@RequestParam String id, String pass, Model m,  HttpSession session){
+//        @SessionAttribute Object usero,
+//        session.getAttribute()
+        Object usero = session.getAttribute("user");
+        //如果用户登陆过直接进入用户主页
+        if(usero!=null){
+            user = (User)usero;
+            m.addAttribute("name",userService.getUserById(user.getId()).getName());
+            return "userhome";
+        }
 
+        user.setId(id);
+        user.setPassword(pass);
+
+        //判断是否存在该用户
         int issu =  userService.hasUser(id,pass);
-//        if (id.equals("123")&&pass.equals("123456")){
-//        System.out.println("id = :"+id+"pass = "+pass);
-//        System.out.printf(" .. "+issu);
-        if (issu==1){
+        if (issu==1){          //登录成功
+            session.setAttribute("user",user);
             m.addAttribute("name",userService.getUserById(id).getName());
             return "userhome";
-        }else if(issu==2){
+        }else if(issu==2){      //密码错误
             m.addAttribute("name","1");
             return "login";
-        }else {
+        }else {                 //不存在该用户
             m.addAttribute("name","2");
             return "login";
         }
     }
 
+    //跳转到登录页面
     @RequestMapping(value = "/login",method = RequestMethod.GET)
     public String indexpage(String name,Model model){
         model.addAttribute("name",name);

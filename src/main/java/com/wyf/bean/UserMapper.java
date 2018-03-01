@@ -14,14 +14,14 @@ import java.util.List;
  */
 @Mapper
 public interface UserMapper {
-    @Select("select * from user")
+    @Select("select * from table_user")
     List<User> showAll();
-    @Insert("insert into user(name,id,password,status) values(#{name},#{id},#{password},#{status})")
+    @Insert("insert into table_user(name,id,password,status) values(#{name},#{id},#{password},#{status})")
     int insert(User user);
-    @Delete("delete from user where id = #{id}")
+    @Delete("delete from table_user where id = #{id}")
     int delete(String id);
-    @Update("update user set name = #{name} , password = #{password} where id = #{id}")
+    @Update("update table_user set name = #{name} , password = #{password} where id = #{id}")
     int update(User user);
-    @Select("select * from user where id = #{id}")
+    @Select("select * from table_user where id = #{id}")
     User getById(String id);
 }
