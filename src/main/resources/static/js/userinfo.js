@@ -1,5 +1,15 @@
 //<![CDATA[ js代码
 $(document).ready(function(){
+    //跳转到角色管理
+    $("#role").click(function () {
+//        widows.location.href="";
+        window.location.href = "/role";
+    } )
+    //修改头像
+    $("#reimg").click(function (){
+          var html = "";
+          $('#usercontent').html(html);
+    })
     //修改密码
     $("#repass").click(function () {
         var html = "<form id='formrepass' class=\"form-horizontal\" onsubmit=\"return false\" role=\"form\" action=\"##\" method=\"post\">\n" +
@@ -24,8 +34,7 @@ $(document).ready(function(){
             "                </form>";
         $('#usercontent').html(html);
     });
-    }
-)
+})
 
 function repass(){
      $.ajax({
