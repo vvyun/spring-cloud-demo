@@ -1,8 +1,8 @@
-#### spring boot web app
+#### spring boot web app 用户权限管理系统
 参考链接; [spring boot guide](https://spring.io/guides/gs/serving-web-content/)
 
 ************
-这是一个使用 spring boot 创建web application的demo  
+这是一个使用 spring boot 创建web application,使用了如下框架
 - spring boot  
 - spring mvc  
 - mybatis
