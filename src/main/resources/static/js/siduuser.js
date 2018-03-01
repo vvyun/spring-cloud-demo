@@ -22,7 +22,7 @@ $(document).ready(function(){
         html += '</table>';
         $('#usercontent').html(html);
     });
-
+    //添加用户
     $("#addUser").click(function () {
         var html = "<form id='formadduser' class=\"form-horizontal\" onsubmit=\"return false\" role=\"form\" action=\"##\" method=\"post\">\n" +
             "                    <div class=\"form-group\">\n" +
@@ -51,7 +51,7 @@ $(document).ready(function(){
             "                </form>";
         $('#usercontent').html(html);
     });
-
+    //删除用户
     $("#delUser").click(function () {
         var html = "<form id='formdeluser' class=\"form-horizontal\" onsubmit=\"return false\" role=\"form\" action=\"##\" method=\"post\">\n" +
             "                    <div class=\"form-group\">\n" +
@@ -68,7 +68,7 @@ $(document).ready(function(){
             "                </form>";
         $('#usercontent').html(html);
     });
-
+    //修改用户
     $("#updateUser").click(function () {
         var html = "<form id='formupuser' class=\"form-horizontal\" onsubmit=\"return false\" role=\"form\" action=\"##\" method=\"post\">\n" +
             "                    <div class=\"form-group\">\n" +

@@ -13,6 +13,7 @@ import java.util.List;
 @Mapper
 public interface PermissionMapper {
 
+    //获取用户权限
     @Select("SELECT * from table_per WHERE id in (SELECT pid FROM t_role_per where rid in (SELECT rid from t_user_role WHERE uid = #{uid}))")
     public List<Permission> getPerListByUid(String uid);
 }

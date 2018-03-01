@@ -1,7 +1,11 @@
 package com.wyf.controller;
 
 import com.wyf.bean.User;
+import com.wyf.bean.Permission;
+import com.wyf.service.PermissionService;
 import com.wyf.service.UserService;
+import com.wyf.urp.Menu;
+import com.wyf.util.MenuUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -10,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpSession;
+import java.util.List;
 
 /**
  *
@@ -23,7 +28,8 @@ public class LoginController {
     User user = new User();
     @Autowired
     private UserService userService;
-
+    @Autowired
+    private PermissionService permissionService;
     //登录Controller
     @RequestMapping("/userlogin")
     public String login(@RequestParam String id, String pass, Model m,  HttpSession session){
@@ -34,6 +40,9 @@ public class LoginController {
         if(usero!=null){
             user = (User)usero;
             m.addAttribute("name",userService.getUserById(user.getId()).getName());
+            List<Permission> list = permissionService.findPer(user.getId());
+            List<Menu> menus = MenuUtil.permission2Menu(list);
+            m.addAttribute("menus", menus);
             return "userhome";
         }
 
@@ -45,6 +54,9 @@ public class LoginController {
         if (issu==1){          //登录成功
             session.setAttribute("user",user);
             m.addAttribute("name",userService.getUserById(id).getName());
+            List<Permission> list = permissionService.findPer(user.getId());
+            List<Menu> menus = MenuUtil.permission2Menu(list);
+            m.addAttribute("menus", menus);
             return "userhome";
         }else if(issu==2){      //密码错误
             m.addAttribute("name","1");

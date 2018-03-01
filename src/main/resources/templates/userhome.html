@@ -11,6 +11,7 @@
             color: #fff;
             background-color: #151719;
         }
+
     </style>
 </head>
 <body>
@@ -19,17 +20,19 @@
         <div class="col-md-12 column">
             <nav class="navbar navbar-default navbar-inverse" role="navigation">
                 <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse"
+                            data-target="#bs-example-navbar-collapse-1">
                         <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span>
                         <span class="icon-bar"></span><span class="icon-bar"></span>
-                    </button> <a class="navbar-brand" href="#">主页</a>
+                    </button>
+                    <a class="navbar-brand" href="/">首页</a>
                 </div>
 
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <!--<ul class="nav navbar-nav">-->
-                        <!--<li class="">-->
-                            <!--<a href="logout">退出</a>-->
-                        <!--</li>-->
+                    <!--<li class="">-->
+                    <!--<a href="logout">退出</a>-->
+                    <!--</li>-->
                     <!--</ul>-->
 
                     <ul class="nav navbar-nav navbar-right">
@@ -46,6 +49,7 @@
                                 </li>
                             </ul>
                         </li>
+
                     </ul>
                 </div>
 
@@ -57,28 +61,27 @@
                 role="navigation" id="accordion">
                 <li class="panel panel-default active"><a
                         class="dropdown-toggle" data-toggle="collapse"
-                        data-parent="#accordion" href="#collapse1"> 个人信息 </a>
+                        data-parent="#accordion" href="#collapse11"> ^ . ^ </a>
 
-                    <div id="collapse1" class="panel-collapse collapse">
+                    <div id="collapse11" class="panel-collapse collapse">
 
                         <ul class="nav newa" role="navigation">
-                            <li><a href="#">修改密码</a></li>
-                            <li><a href="#">修改头像</a></li>
-                            <li><a href="javascript:exit();">退出账号</a></li>
+                            <li><a href="/logout">退出账号</a></li>
                         </ul>
                     </div>
                 </li>
-                <li class="panel panel-default active"><a
-                        class="dropdown-toggle" data-toggle="collapse"
-                        data-parent="#accordion" href="#collapse2"> 用户管理 </a>
 
-                    <div id="collapse2" class="panel-collapse collapse">
-
+                <li class="panel panel-default active" th:each="menu:${menus}">
+                    <a class="dropdown-toggle" data-toggle="collapse" data-parent="#accordion"
+                       th:text="${menu.name}" th:href="'#collapse'+${menu.id}">
+                    </a>
+                    <!--th:herf="${menu.id}"-->
+                    <div th:id="'collapse'+${menu.id}" class="panel-collapse collapse">
                         <ul class="nav newa" role="navigation">
-                            <li><a id="addUser" href="#">添加用户</a></li>
-                            <li><a id="updateUser" href="#">修改用户</a></li>
-                            <li><a id="delUser" href="#">删除用户</a></li>
-                            <li><a id="getAll" href="#">所有用户</a></li>
+                            <li th:each="submenu:${menu.children}">
+                                <a href="#" th:id="${submenu.url}" th:text="${submenu.name}"></a>
+                            </li>
+
                         </ul>
                     </div>
                 </li>
@@ -86,7 +89,7 @@
         </div>
         <div class="col-md-10 column">
             <div class="" id="usercontent">
-                <p th:text="'Hello, ' + ${name} + '!'" />
+                <p th:text="'Hello, ' + ${name} + '!'"/>
                 <p> Login Success</p>
             </div>
             <div>
@@ -97,6 +100,6 @@
     </div>
 </div>
 <script src="/js/siduuser.js"></script>
-
+<script src="/js/userinfo.js"></script>
 </body>
 </html>
