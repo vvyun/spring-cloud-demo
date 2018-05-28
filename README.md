@@ -13,7 +13,7 @@
 使用方式  
 1. 下载该demo   
 ```
-git clone https://github.com/fantasykill/springboot.git
+git clone https://github.com/nuagevoler/springboot.git
 ```
 2. 用idea / eclipse 打开项目  
 3. 修改maven路径（本地路径，修改conf/settings.xml文件镜像用国内的）  
