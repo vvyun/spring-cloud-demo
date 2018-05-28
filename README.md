@@ -2,7 +2,7 @@
 参考链接; [spring boot guide](https://spring.io/guides/gs/serving-web-content/)
 
 ************
-这是一个使用 spring boot 创建web application,使用了如下框架
+这是一个使用 spring boot 创建web application(只是个demo，并不完善，适用于学习框架),使用了如下框架
 - spring boot  
 - spring mvc  
 - mybatis
