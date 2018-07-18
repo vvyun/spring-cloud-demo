@@ -20,7 +20,7 @@
 ************
 使用方式
 
-1. 下载该demo，git clone https://github.com/nuagevoler/springboot.git
+1. 下载该demo，git clone https://github.com/vvyun/springboot.git
 
 2. 用idea / eclipse 打开项目
 
