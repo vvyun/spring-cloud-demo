@@ -1,6 +1,6 @@
 # spring boot web app 用户权限管理系统
 
-该demo较为简单，适合初学者参考学习
+该demo较（及）为简单，适合初学者参考学习
 
 参考链接： [spring boot guide](https://spring.io/guides/gs/serving-web-content/)
 
