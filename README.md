@@ -32,7 +32,7 @@
 
 6. 运行MainApplication
 
-7. 运行成功后访问 [http://localhost:8080/](http://localhost:8080/)  
+7. 运行成功后访问 [http://localhost:8080/](http://localhost:8080/)  点导航栏的登陆按钮进入如下图所示页面
 
 ************
 运行截图：
