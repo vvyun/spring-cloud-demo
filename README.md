@@ -1,11 +1,11 @@
 # spring boot web app 用户权限管理系统
 
-该demo较（及）为简单，适合初学者参考学习
+该demo较（及）为简单，适合初学者参考学习（可用于了解spring boot基本使用方式）
 
 参考链接： [spring boot guide](https://spring.io/guides/gs/serving-web-content/)
 
 ************
-这是一个使用 spring boot 创建web application(只是个demo，并不完善，适用于学习框架),使用了如下框架
+这是一个使用 spring boot 创建web application的示例
 
 - spring boot
 
