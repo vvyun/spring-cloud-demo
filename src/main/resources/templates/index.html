@@ -1,90 +1,27 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <title>主页</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css"/>
-    <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
-    <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <link href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 </head>
 <body>
 <div class="container">
     <div class="row clearfix">
         <div class="col-md-12 column">
-            <nav class="navbar navbar-default navbar-inverse" role="navigation">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse"
-                            data-target="#bs-example-navbar-collapse-1"><span
-                            class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span
-                            class="icon-bar"></span><span class="icon-bar"></span></button>
-                    <a class="navbar-brand" href="/">首页</a>
-                </div>
 
-                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <ul class="nav navbar-nav">
-                        <li class="">
-                            <a href="/login">登录</a>
-                        </li>
-                    </ul>
-                    <ul class="nav navbar-nav">
-                        <li class="">
-                            <a href="/regist">注册</a>
-                        </li>
-                    </ul>
-                    <ul class="nav navbar-nav navbar-right">
+            <div th:replace="common/commonnav::nav" ></div>
 
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">作者<strong class="caret"></strong></a>
-                            <ul class="dropdown-menu">
-
-                                <li>
-                                    <a href="https://github.com/fantasykill" style="text-align:center">我的github</a>
-                                </li>
-                                <li>
-                                    <a href="https://gitee.com/fantasykill" style="text-align:center">我的码云</a>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-
-            </nav>
             <div class="jumbotron">
                 <h1>
-                    Spring Boot 学习
+                    This is a Spring Boot demo
                 </h1>
-                <p>
-                    ....
-                </p>
-                <p>
-                    <a class="btn btn-primary btn-large" href="https://spring.io/">Spring官网</a>
-                </p>
+                <a href="/login">登陆</a>
             </div>
-        </div>
-    </div>
-    <div class="row clearfix">
-        
-        <div class="col-md-4 column">
-            <h2>
-                Spring Cloud
-            </h2>
-            <p>
-               ...
-            </p>
-            <p>
-                <a class="btn" href="#">View details »</a>
-            </p>
-        </div>
-        <div class="col-md-4 column">
-            <h2>
-                Spring Cloud Data Flow
-            </h2>
-            <p>
-               ...
-            </p>
-            <p>
-                <a class="btn" href="#">View details »</a>
-            </p>
         </div>
     </div>
 </div>

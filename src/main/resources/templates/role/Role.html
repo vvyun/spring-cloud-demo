@@ -2,9 +2,10 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css"/>
-    <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
-    <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
     <title>角色管理</title>
     <style>
         .nav-pills>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover {
@@ -20,42 +21,7 @@
 <div class="container">
     <div class="row clearfix">
         <div class="col-md-12 column">
-            <nav class="navbar navbar-default navbar-inverse" role="navigation">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse"
-                            data-target="#bs-example-navbar-collapse-1">
-                        <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span>
-                        <span class="icon-bar"></span><span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="/">首页</a>
-                </div>
-
-                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <!--<ul class="nav navbar-nav">-->
-                    <!--<li class="">-->
-                    <!--<a href="logout">退出</a>-->
-                    <!--</li>-->
-                    <!--</ul>-->
-
-                    <ul class="nav navbar-nav navbar-right">
-
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">作者<strong class="caret"></strong></a>
-                            <ul class="dropdown-menu">
-
-                                <li>
-                                    <a href="https://github.com/fantasykill" style="text-align:center">我的github</a>
-                                </li>
-                                <li>
-                                    <a href="https://gitee.com/fantasykill" style="text-align:center">我的码云</a>
-                                </li>
-                            </ul>
-                        </li>
-
-                    </ul>
-                </div>
-
-            </nav>
+            <div th:replace="common/commonnav::nav" ></div>
 
         </div>
         <div class="col-md-2 column" id="letfdh">
