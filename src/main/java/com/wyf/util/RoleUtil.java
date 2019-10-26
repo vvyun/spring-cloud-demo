@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Map;
 
 import com.wyf.urp.RoleBean;
-import com.wyf.bean.Role;
+import com.wyf.entity.Role;
 
 public class RoleUtil {
 	public static List<RoleBean> role2RoleBean(List<Role> roles,List<Role> userRole){

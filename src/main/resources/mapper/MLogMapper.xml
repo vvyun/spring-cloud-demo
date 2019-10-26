@@ -1,0 +1,25 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<!DOCTYPE mapper PUBLIC
+        "-//mybatis.org//DTD com.example.Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.wyf.mapper.MLogMapper">
+    <resultMap id="result" type="com.wyf.entity.MLog">
+        <result property="uuid" column="uuid"/>
+        <result property="type" column="type"/>
+        <result property="requestContent" column="request_content"/>
+        <result property="responseContent" column="response_content"/>
+
+    </resultMap>
+
+    <select id="ListAllLog" resultMap="result">SELECT * FROM table_log</select>
+
+    <select id="findLogByType" resultMap="result">SELECT * FROM  table_log where type=#{type}</select>
+
+    <insert id="insertLog" parameterType="com.wyf.entity.MLog">
+      insert into Table_Log
+        (type,request_content,response_content)
+        values(#{type},#{requestContent},#{responseContent})
+    </insert>
+
+</mapper>

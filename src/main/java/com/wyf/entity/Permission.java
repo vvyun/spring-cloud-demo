@@ -1,16 +1,14 @@
-package com.wyf.urp;
+package com.wyf.entity;
 
-import java.util.ArrayList;
-import java.util.List;
+public class Permission {
 
-public class Menu implements Comparable<Menu> {
     private int id;
+
     private String name;
     private int type;
     private String url;
     private int sort;
     private int pid;
-    private List<Menu> children = new ArrayList<>();
 
     public int getId() {
         return id;
@@ -60,17 +58,19 @@ public class Menu implements Comparable<Menu> {
         this.pid = pid;
     }
 
-    public List<Menu> getChildren() {
-        return children;
+    public Permission(int id, String name, int type, String url, int sort, int pid) {
+        super();
+        this.id = id;
+        this.name = name;
+        this.type = type;
+        this.url = url;
+        this.sort = sort;
+        this.pid = pid;
     }
 
-    public void setChildren(List<Menu> children) {
-        this.children = children;
+    public Permission() {
+
     }
 
-    //排序
-    @Override
-    public int compareTo(Menu o) {
-        return this.sort - o.getSort();
-    }
+
 }

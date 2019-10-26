@@ -1,8 +1,8 @@
 package com.wyf.controller;
 
 
-import com.wyf.bean.Role;
-import com.wyf.bean.UserRole;
+import com.wyf.entity.Role;
+import com.wyf.entity.UserRole;
 import com.wyf.service.RoleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Map;
 
 import com.wyf.urp.Menu;
-import com.wyf.bean.Permission;
+import com.wyf.entity.Permission;
 
 public class MenuUtil {
 	public static List<Menu> permission2Menu(List<Permission> pers){

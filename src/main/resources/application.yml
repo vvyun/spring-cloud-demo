@@ -29,8 +29,8 @@ spring:
       cache: false #暂时关闭
 
 mybatis:
-#  mapper-locations: classpath:mapping/*.xml
-  type-aliases-package: com.wyf.bean
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.wyf.entity
 
 #pagehelper
 #pagehelper:

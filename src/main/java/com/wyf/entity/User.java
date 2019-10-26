@@ -1,6 +1,4 @@
-package com.wyf.bean;
-
-import lombok.ToString;
+package com.wyf.entity;
 
 /**
  * @author Yunfei

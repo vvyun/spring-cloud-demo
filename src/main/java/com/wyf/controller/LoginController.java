@@ -1,7 +1,7 @@
 package com.wyf.controller;
 
-import com.wyf.bean.User;
-import com.wyf.bean.Permission;
+import com.wyf.entity.User;
+import com.wyf.entity.Permission;
 import com.wyf.service.PermissionService;
 import com.wyf.service.UserService;
 import com.wyf.urp.Menu;
@@ -40,7 +40,7 @@ public class LoginController {
         if(usero!=null){
             user = (User)usero;
             m.addAttribute("name",userService.getUserById(user.getId()).getName());
-            List<Permission> list = permissionService.findPer(user.getId());
+            List<Permission> list = permissionService.listPerssion(user.getId());
             List<Menu> menus = MenuUtil.permission2Menu(list);
             m.addAttribute("menus", menus);
             return "userhome";
@@ -54,7 +54,7 @@ public class LoginController {
         if (issu==1){          //登录成功
             session.setAttribute("user",user);
             m.addAttribute("name",userService.getUserById(id).getName());
-            List<Permission> list = permissionService.findPer(user.getId());
+            List<Permission> list = permissionService.listPerssion(user.getId());
             List<Menu> menus = MenuUtil.permission2Menu(list);
             m.addAttribute("menus", menus);
             return "userhome";

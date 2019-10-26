@@ -5,14 +5,13 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
- *
  * @author Yunfei
  * 程序入口
  */
 @SpringBootApplication
-@MapperScan("com.wyf.bean")
+@MapperScan("com.wyf.entity")
 public class MainApplication {
-	public static void main(String[] args) {
-		SpringApplication.run(MainApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(MainApplication.class, args);
+    }
 }

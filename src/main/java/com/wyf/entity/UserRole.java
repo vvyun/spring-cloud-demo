@@ -1,9 +1,7 @@
-package com.wyf.bean;
+package com.wyf.entity;
 
 /**
- *
  * @author Yunfei
- *
  */
 public class UserRole {
     private int uid;

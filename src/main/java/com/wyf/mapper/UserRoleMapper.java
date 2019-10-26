@@ -1,12 +1,11 @@
-package com.wyf.bean;
+package com.wyf.mapper;
 
+import com.wyf.entity.UserRole;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Update;
 
 /**
- *
  * @author Yunfei
- *
  */
 @Mapper
 public interface UserRoleMapper {

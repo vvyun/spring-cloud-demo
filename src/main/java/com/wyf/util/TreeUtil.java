@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Map;
 
 import com.wyf.urp.TreeBean;
-import com.wyf.bean.Permission;
+import com.wyf.entity.Permission;
 
 public class TreeUtil {
 	

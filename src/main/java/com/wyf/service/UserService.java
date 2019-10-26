@@ -1,7 +1,7 @@
 package com.wyf.service;
 
-import com.wyf.bean.User;
-import com.wyf.bean.UserMapper;
+import com.wyf.entity.User;
+import com.wyf.mapper.UserMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
