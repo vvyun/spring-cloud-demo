@@ -8,72 +8,46 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 /**
- *
  * @author Yunfei
  * User Service
- *
  */
 @Service
 public class UserService {
+
     @Autowired
     private UserMapper userMapper;
 
-    /**
-     * @return allUsers
-     */
     public List<User> listAll() {
         return userMapper.showAll();
     }
 
-    /**
-     *
-     * @param id
-     * @return User
-     */
-    public User getUserById(String id){
+    public User getUserById(String id) {
         return userMapper.getById(id);
     }
 
-    /**
-     *
-     * @param id
-     * @param pass
-     * @return int 是否存在
-     */
-    public int hasUser(String id ,String pass){
-        User user = userMapper.getById(id);
-        if (user!=null){
-            if (userMapper.getById(id).getPassword().equals(pass))
-                return  1;
+    public int userLogin(User user) {
+
+        String password = user.getPassword();
+        String id = user.getId();
+        user = userMapper.getById(id);
+
+        if (user != null) {
+            if (user.getPassword().equals(password))
+                return 1;
             else return 0;
         }
         return 2;
     }
 
-    /**
-     *
-     * @param user
-     * @return 是否添加成功
-     */
-    public int addUser(User user){
+    public int addUser(User user) {
         return userMapper.insert(user);
     }
 
-    /**
-     *
-     * @param id
-     * @return 是否删除成功
-     */
-    public int deleteUser(String id){
+    public int deleteUser(String id) {
         return userMapper.delete(id);
     }
 
-    /**
-     *
-     * @param user
-     * @return
-     */
-    public int updateUser(User user){
+    public int updateUser(User user) {
         return userMapper.update(user);
     }
 }

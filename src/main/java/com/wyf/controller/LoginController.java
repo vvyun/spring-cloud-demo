@@ -17,61 +17,60 @@ import javax.servlet.http.HttpSession;
 import java.util.List;
 
 /**
- *
  * @author Yunfei
  * login controller
- *
  */
 @Controller
 public class LoginController {
 
-    User user = new User();
+    private User user = new User();
+
     @Autowired
     private UserService userService;
     @Autowired
     private PermissionService permissionService;
-    //登录Controller
+
     @RequestMapping("/userlogin")
-    public String login(@RequestParam String id, String pass, Model m,  HttpSession session){
-//        @SessionAttribute Object usero,
-//        session.getAttribute()
+    public String login(@RequestParam String id, String pass, Model m, HttpSession session) {
+
         Object usero = session.getAttribute("user");
         //如果用户登陆过直接进入用户主页
-        if(usero!=null){
-            user = (User)usero;
-            m.addAttribute("name",userService.getUserById(user.getId()).getName());
+        if (usero != null) {
+            user = (User) usero;
+            m.addAttribute("name", user.getName());
             List<Permission> list = permissionService.listPerssion(user.getId());
             List<Menu> menus = MenuUtil.permission2Menu(list);
             m.addAttribute("menus", menus);
             return "userhome";
         }
 
+        //判断是否存在该用户
         user.setId(id);
         user.setPassword(pass);
+        int issu = userService.userLogin(user);
 
-        //判断是否存在该用户
-        int issu =  userService.hasUser(id,pass);
-        if (issu==1){          //登录成功
-            session.setAttribute("user",user);
-            m.addAttribute("name",userService.getUserById(id).getName());
+        if (issu == 1) {          //登录成功
+            user = userService.getUserById(id);
+            session.setAttribute("user", user);
+            m.addAttribute("name", user.getName());
             List<Permission> list = permissionService.listPerssion(user.getId());
             List<Menu> menus = MenuUtil.permission2Menu(list);
             m.addAttribute("menus", menus);
             return "userhome";
-        }else if(issu==2){      //密码错误
-            m.addAttribute("name","1");
+        } else if (issu == 2) {      //密码错误
+            m.addAttribute("name", "1");
             return "login";
-        }else {                 //不存在该用户
-            m.addAttribute("name","2");
+        } else {                 //不存在该用户
+            m.addAttribute("name", "2");
             return "login";
         }
     }
 
-    //跳转到登录页面
-    @RequestMapping(value = "/login",method = RequestMethod.GET)
-    public String indexpage(String name,Model model){
-        model.addAttribute("name",name);
-        return  "login";
+
+    @RequestMapping(value = "/login", method = RequestMethod.GET)
+    public String loginPage(String name, Model model) {
+        model.addAttribute("name", name);
+        return "login";
     }
 
 }

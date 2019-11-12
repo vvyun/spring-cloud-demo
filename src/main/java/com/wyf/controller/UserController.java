@@ -6,8 +6,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 
+import javax.servlet.http.HttpSession;
 import java.io.File;
+import java.io.IOException;
 import java.util.List;
 
 /**
@@ -41,62 +44,48 @@ public class UserController {
         return userService.getUserById(id);
     }
 
-    /**
-     * 添加用户
-     *
-     * @param id
-     * @param pass
-     * @param name
-     * @return
-     */
     @RequestMapping("/addUser")
     public int addUser(@RequestParam String id, String pass, String name) {
-//        System.out.println("name = " + name);
         return userService.addUser(new User(name, id, pass, 1));
     }
 
-    /**
-     * 删除用户
-     *
-     * @param id
-     * @return
-     */
     @RequestMapping("/delUser")
     public int delUser(@RequestParam String id) {
         return userService.deleteUser(id);
     }
 
-    /**
-     * 更新用户
-     *
-     * @param id
-     * @param name
-     * @param pass
-     * @return
-     */
     @RequestMapping("/updateUser")
     public int updateUser(@RequestParam String id, String name, String pass) {
         return userService.updateUser(new User(name, id, pass, 1));
     }
 
-    /**
-     * 修改密码
-     * @param passold
-     * @param passnew
-     * @return
-     */
     @RequestMapping("/repass")
-    public int rePass(@RequestParam String passold, String passnew) {
+    public int rePass(@RequestParam String passold, String passnew, HttpSession session) {
+        User user = (User) session.getAttribute("user");
+        user = userService.getUserById(user.getId());
+        if (user.getPassword().equals(passold)) {
+            user.setPassword(passnew);
+            userService.updateUser(user);
+        }else {
+            return 0;
+        }
         return 1;
     }
 
-    /**
-     * 修改头像
-     * @param file
-     * @return
-     */
     @RequestMapping("/reimg")
-    public int reImg(@RequestParam File file) {
-        return 0;
+    public int reImg(@RequestParam("headimg") MultipartFile file, HttpSession session) throws IOException {
+
+        if (file==null){
+            return 0;
+        }
+
+        User user = (User) session.getAttribute("user");
+        user = userService.getUserById(user.getId());
+
+        String headImgFileName = "C:/Users/workpc/" + user.getId()+".png";
+
+        file.transferTo(new File(headImgFileName));//文件转存
+
+        return 1;
     }
 }
