@@ -1,0 +1,41 @@
+HELP.md
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**
+!**/src/test/**
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+
+### VS Code ###
+.vscode/
+
+### other
+/server-eureka/target/
+/server-eureka/mvnw
+/server-eureka/mvnw.cmd
+/client-web/mvnw
+/client-web/mvnw.cmd
+/client-web/.mvn/
+/server-eureka/.mvn/
+/client-common/.mvn/

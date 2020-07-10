@@ -1,0 +1,11 @@
+server:
+  port: 8080
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    registerWithEureka: false # 设置是否将自己作为 Eureka Client 注册到 Eureka Server
+    fetchRegistry: false  # 设置是否从 Eureka Server 获取 注册信息
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/  # Eureka Server 的 交互地址
