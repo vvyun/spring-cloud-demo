@@ -27,7 +27,7 @@
         <module>server-eureka</module>
         <module>client-common</module>
         <module>client-web</module>
-        <module>client-auth</module>
+        <module>client-oauth2</module>
     </modules>
 
     <dependencies>
