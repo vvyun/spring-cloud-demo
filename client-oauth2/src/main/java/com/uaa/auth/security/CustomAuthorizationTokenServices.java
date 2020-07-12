@@ -20,9 +20,6 @@ import java.util.Date;
 import java.util.Set;
 import java.util.UUID;
 
-/**
- * Created by wyf on 2017/8/5.
- */
 public class CustomAuthorizationTokenServices implements AuthorizationServerTokenServices, ConsumerTokenServices {
 
     private int refreshTokenValiditySeconds = 60 * 60 * 24 * 30; // default 30 days.

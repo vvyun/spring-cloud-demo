@@ -15,10 +15,6 @@ import org.springframework.util.Assert;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- * @author wyf
- * @date 2017/10/17
- */
 public class CustomLogoutHandler implements LogoutHandler {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(CustomLogoutHandler.class);

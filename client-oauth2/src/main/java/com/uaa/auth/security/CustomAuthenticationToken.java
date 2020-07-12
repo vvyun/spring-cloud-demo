@@ -2,9 +2,6 @@ package com.uaa.auth.security;
 
 import org.springframework.security.authentication.AbstractAuthenticationToken;
 
-/**
- * Created by wyf on 2017/8/5.
- */
 public class CustomAuthenticationToken extends AbstractAuthenticationToken {
 
     private CustomUserDetails userDetails;

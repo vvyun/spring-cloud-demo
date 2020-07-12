@@ -5,10 +5,6 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Collection;
 
-/**
- * @author wyf
- * token中的登陆信息
- */
 public class CustomUserDetails implements UserDetails {
     static final long serialVersionUID = -7588980448693010399L;
     private String username;

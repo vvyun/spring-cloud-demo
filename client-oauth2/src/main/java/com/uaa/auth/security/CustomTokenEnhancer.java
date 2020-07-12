@@ -9,9 +9,6 @@ import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * Created by wyf on 2017/8/5.
- */
 public class CustomTokenEnhancer extends JwtAccessTokenConverter implements Serializable {
 
     private static final String TOKEN_SEG_USER_ID = "TK-UserId";

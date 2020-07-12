@@ -3,7 +3,7 @@ package com.uaa.auth.utils;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 /**
- * Created by wyf on 2017/1/17.
+ * Created by vvyun on 2017/1/17.
  */
 public class JsonUtil {
     /**

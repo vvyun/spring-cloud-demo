@@ -14,7 +14,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * @author wyf
+ * @author vvyun
  */
 @Component
 public class CustomAuthenticationProvider implements AuthenticationProvider {

@@ -13,9 +13,6 @@ import org.springframework.stereotype.Component;
 import java.util.Collection;
 import java.util.Iterator;
 
-/**
- * @author wyf
- */
 @Component
 public class SecurityAccessDecisionManager implements AccessDecisionManager {
     private Logger logger = LoggerFactory.getLogger(SecurityAccessDecisionManager.class);

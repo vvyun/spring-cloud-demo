@@ -11,11 +11,6 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 
-/**
- * 这里模拟的是授权码登录时候的身份认证
- * 授权码登录验证的界面可以根据需要自定义
- * Created by wyf on 2018/1/3.
- */
 @Component
 public class CodeAuthenticationProvider implements AuthenticationProvider {
 

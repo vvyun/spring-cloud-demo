@@ -6,7 +6,7 @@ import java.security.*;
 import java.security.cert.CertificateException;
 
 /**
- * @author wyf
+ * @author vvyun
  * 生成密钥
  * keytool -genkey -alias jwt -keyalg RSA -keysize 1024 -keystore jwt.jks -validity 365
  * 密码 123456 其他默认空

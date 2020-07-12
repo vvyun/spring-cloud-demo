@@ -7,10 +7,8 @@ import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.junit4.SpringRunner;
 
 /**
- * @author wyf
- * @date 2016/12/5
+ * @author vvyun
  */
-
 @RunWith(SpringRunner.class)
 @SpringBootTest("classpath:application-test.yml")
 @DirtiesContext

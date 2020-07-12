@@ -13,9 +13,6 @@ import org.springframework.util.PathMatcher;
 
 import java.util.*;
 
-/**
- * @author wyf
- */
 @Component
 public class SecureResourceFilterInvocationDefinitionSource implements FilterInvocationSecurityMetadataSource, InitializingBean {
     private Logger logger = LoggerFactory.getLogger(SecureResourceFilterInvocationDefinitionSource.class);
