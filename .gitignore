@@ -39,3 +39,5 @@ build/
 /client-web/.mvn/
 /server-eureka/.mvn/
 /client-common/.mvn/
+
+**/target/

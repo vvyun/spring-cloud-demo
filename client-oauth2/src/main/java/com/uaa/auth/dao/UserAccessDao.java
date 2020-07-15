@@ -1,4 +1,8 @@
 package com.uaa.auth.dao;
 
-public class UserAccessDao {
+import com.uaa.auth.entity.UserAccess;
+
+public interface UserAccessDao {
+
+    UserAccess getUser();
 }
