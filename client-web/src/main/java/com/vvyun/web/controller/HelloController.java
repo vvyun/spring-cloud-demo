@@ -1,7 +1,7 @@
 package com.vvyun.web.controller;
 
+import com.vvyun.util.DateUtil;
 import com.vvyun.web.client.SayHelloCllient;
-import com.vvyun.web.util.DateUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;

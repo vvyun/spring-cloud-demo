@@ -5,11 +5,11 @@
     <parent>
         <groupId>com.vvyun</groupId>
         <artifactId>cloud-example</artifactId>
-        <version>1.0</version>
+        <version>1.0-SNAPSHOT</version>
     </parent>
 
     <artifactId>client-web</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>1.0-SNAPSHOT</version>
     <name>client-web</name>
     <description>client for web application</description>
 
@@ -48,6 +48,11 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-openfeign</artifactId>
             <version>2.1.1.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>com.vvyun</groupId>
+            <artifactId>client-util</artifactId>
+            <version>1.0-SNAPSHOT</version>
         </dependency>
     </dependencies>
 

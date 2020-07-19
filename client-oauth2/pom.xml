@@ -6,7 +6,7 @@
 
     <artifactId>client-oauth2</artifactId>
     <groupId>com.uaa.oauth2</groupId>
-    <version>2.0</version>
+    <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <name>client-oauth2</name>

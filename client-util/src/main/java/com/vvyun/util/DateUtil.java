@@ -1,4 +1,4 @@
-package com.vvyun.web.util;
+package com.vvyun.util;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;

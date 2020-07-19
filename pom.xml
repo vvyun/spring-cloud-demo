@@ -15,15 +15,17 @@
     <groupId>com.vvyun</groupId>
     <artifactId>cloud-example</artifactId>
     <packaging>pom</packaging>
-    <version>1.0</version>
+    <version>1.0-SNAPSHOT</version>
 
     <properties>
         <java.version>1.8</java.version>
         <spring-cloud.version>Hoxton.SR1</spring-cloud.version>
         <fastjson.version>1.2.68</fastjson.version>
+        <commons-lang3.version>3.8</commons-lang3.version>
     </properties>
 
     <modules>
+        <module>client-util</module>
         <module>server-eureka</module>
         <module>client-common</module>
         <module>client-web</module>
