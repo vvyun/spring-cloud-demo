@@ -26,6 +26,7 @@
 
     <modules>
         <module>client-util</module>
+        <module>client-gateway</module>
         <module>server-eureka</module>
         <module>client-common</module>
         <module>client-web</module>
