@@ -29,8 +29,10 @@
         <module>client-gateway</module>
         <module>server-eureka</module>
         <module>client-common</module>
+        <module>client-user</module>
         <module>client-web</module>
         <module>client-oauth2</module>
+        <module>client-mq</module>
     </modules>
 
     <dependencies>
