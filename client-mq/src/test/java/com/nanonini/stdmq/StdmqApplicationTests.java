@@ -15,10 +15,6 @@ class StdmqApplicationTests {
     // hello word 模式
     @Test
     void sendHello() {
-        //设置回调对象
-        this.template.setConfirmCallback((correlationData, b, s) -> {
-
-        });
         template.convertAndSend("hello", "hello word message!");
     }
 
