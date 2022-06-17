@@ -28,7 +28,7 @@
         <oval.version>1.85</oval.version>
         <pagehelper.version>4.1.1</pagehelper.version>
         <!-- alibaba -->
-        <alibaba.fastjson.version>1.2.36</alibaba.fastjson.version>
+        <alibaba.fastjson.version>1.2.83</alibaba.fastjson.version>
         <alibaba.druid.version>1.1.10</alibaba.druid.version>
         <!-- log -->
         <slf4j.version>1.7.9</slf4j.version>
